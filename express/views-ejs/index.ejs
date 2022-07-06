@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+</head>
+<body>
+
+<h3><strong>Home page</strong>, this is Home page</h3>
+
+<%- include('./layout/head')%>
+<p>this is showen Home page</p>
+<h4>All Products</h4>
+<%if(array.length > 0){%>
+<div class="content ">
+
+	<% array.forEach(item=>{ %>
+	<h5 class= "title"><%= item.title %></h5>
+	<p><span><%=  item.productType %></span></p>
+	<% }) %>
+
+</div>
+	<% } else{%>
+	<p>products doesn't exists</p>
+	<% } %>
+
+<%- include('./layout/footer')%>
+</body>
+</html>
